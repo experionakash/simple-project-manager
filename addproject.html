@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Project manager
+	</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script src="addproject.js"></script>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+	<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	
+</head>
+<body>
+	<div class="rows">
+		<div class="col-md-2"></div>
+		<div class="col-md-8" >	
+		<div class="form-div row">
+			<form>
+			
+         <h3>ADD PROJECT </h3><br>
+				<div class="col-md-2"> </div>
+				<div class="col-md-8">
+					Project Name <input type="text" id="pname" class="form-control" placeholder="Enter Project Name" required> <br>
+					Project Code <input type="text" id="pcode" class="form-control" placeholder="Enter Project Code" required> <br>
+					
+					Customer 
+						<select class="form-control" id="customer">
+							<option value="select customer" selected="selected">Select Customer</option>
+							<option value="CodeObjects">CodeObjects</option>
+							<option value="Regus">Regus</option>
+							<option value="TRL">TRL</option>
+							<option value="Worldsmart">Worldsmart</option>
+						</select> <br>
+						<div class="row">
+							<div class="col-md-3"></div>
+							<div class="col-md-9"> 
+								Type &nbsp&nbsp&nbsp <input type="radio" name="type" class=".radio-inline" value="Fixed ree" id="ctype">&nbspFixed fee 
+									&nbsp&nbsp&nbsp <input type="radio" name="type" class=".radio-inline" id="ctype" value="T and M">&nbspT and M
+							</div>
+						</div>	
+                  Currency 
+						<select class="form-control" id="currency">
+							<option value="select currency" selected="selected">Select Currency</option>
+							<option value="USD">USD</option>
+							<option value="INR">INR</option>
+							<option value="GBP">GBP</option>
+							<option value="AUD">AUD</option>
+						</select> <br>	
+					Manager <input type="text" id="manager" class="form-control" placeholder="Enter Manager Name" required> <br>
+					Project Status 
+						<select class="form-control" id="status">
+							<option value="select status" selected="selected">Select Status</option>
+							<option value="Yet To Start">Yet To Start</option>
+							<option value="In progress">In progress</option>
+							<option value="On Hold">On Hold</option>
+							<option value="Closed">Closed</option>
+						</select> <br>
+                  Project Start Date<input type="text" class="form-control date" id="startdate" placeholder="Select Date " required> <br>
+                  Project Closure Date<input type="text" class="form-control date" id="enddate" placeholder="Select Date " required> <br>
+
+					<div class="row">
+					<div class="col-md-6">																				
+						<button type="submit" id="add" class="form-control btn-primary">Submit</button>
+					</div>
+					<div class="col-md-6">
+						<button type="reset" class="form-control btn-primary" id="clear">Clear</button>
+					</div>
+               <br><br><br>
+				</div>	
+
+
+				</div>
+				<div class="col-md-2"> </div>
+				
+			
+			</form>
+		</div>
+			
+			<div id="success"  style="display: none;"> 
+				<p> Successfully Added</p>
+				
+			</div>
+
+			<div id="curr"  style="display: none;"> 
+				<p>check currency</p>
+				
+			</div>
+			<div id="warning"  style="display: none;"> 
+				<p>All fields are mandatory</p>
+				
+			</div>
+
+
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+</body>
+</html>

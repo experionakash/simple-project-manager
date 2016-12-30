@@ -1,0 +1,40 @@
+table {
+  padding-bottom: 50px !important; }
+
+th {
+  text-align: center !important;
+  background-color: #aadede;
+  border-color: #1d1d1d; }
+
+body {
+  background-color: #867b7b !important; }
+
+legend {
+  font-size: 15px !important;
+  font-weight: bold; }
+
+h3 {
+  text-align: center;
+  font-size: 15px !important;
+  margin-bottom: 15px !important;
+  font-weight: bold !important; }
+
+.required {
+  border-color: #CF3F2E !important; }
+
+.rows {
+  padding-top: 50px !important; }
+
+#add, #clear {
+  margin-top: 10px; }
+
+#mytable {
+  max-height: 100px !important;
+  min-height: 50px !important; }
+
+#table-div {
+  border: 2px solid #A7A7A7 !important;
+  margin-bottom: 20px;
+  background-color: #f5f5f5 !important; }
+
+/*# sourceMappingURL=mystyle.css.map */
