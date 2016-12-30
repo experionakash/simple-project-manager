@@ -3,24 +3,19 @@ $(function() {
 
   $( "#startdate" ).datepicker();
   $( "#enddate" ).datepicker();
-
-
-	var valiadteflag = true;
-	var currencyflag=true;
+	
 	let valflag = false;
-
+	let currencyflag=true;
   $("#add").click(function(e){
-  	
-	  validate();
-	  
-	 
-	  if(valiadteflag === true)
-	  {
-		  currencycheck();
-		  if(currencyflag=== true)
+  	 e.preventDefault();
+
+	  if(validate())
+	  {	  
+		console.log("hellloooo");
+		  if(currencycheck())
 		  {
 			  
-				let project = new Object()
+			  	let project = new Object()
 				project.pname = $("#pname").val();
 				project.pcode = $("#pcode").val();
 				project.currency= $("#currency").val();
@@ -31,40 +26,14 @@ $(function() {
 				project.startdate=$("#startdate").val();
 				project.enddate=$("#enddate").val();
 				localStorage.setItem("project",JSON.stringify(project));
-
-
 				alert("akjksskj");
-
 				window.location.href = "display.html";
-	  	}
+		  }
 	  }
+	  return false;
 	});
 
-
-
-
-  $("#clear").click(function(e){
-  	e.preventDefault();
-  		
-  	clearall();
-  		
-  });
-
-	function clearall(){
-  		$("#pname").val(null);
-	  	$("#pcode").val(null);
-	  	$("#startdate").val(null);
-		$("#enddate").val(null);
-		$("#ctype").selected(null);
-	   	$("#currency").val("select currency");
-		$("#manager").val(null);
-		$("#customer").val("select customer");
-		$("#status").val("select status");
-	   	$(".form-control").removeClass("required");
-		$("#radio1").val(null);
-	   }
-
-
+	
 	function validate() {
 
 		addstyle("#manager","");
@@ -77,7 +46,7 @@ $(function() {
 		addstyle("#status","select status");
 		addstyle("#ctype","");
 		
-	
+
 		if (valflag === true)
 		{
 			$("#warning").dialog({modal:true,
@@ -91,18 +60,30 @@ $(function() {
 				
 			});
 			valflag = false;
-			valiadteflag=false;
+			
+			return false;
 		}
 		else
-		{
-			valiadteflag=true;
+		{	return true;
+			
 		}
 	}
 
-
+	function addstyle(id,value){
+		if ( $(id).val() ===value ) {
+			$(id).addClass("required");
+			valflag = true;
+		}
+		else 
+		{
+			$(id).removeClass("required");
+		}
+	}
 
 	function currencycheck()	
 	{	
+		console.log("DONE ");
+
 		
 		if($("#customer").val()==="CodeObjects")
 		{
@@ -146,38 +127,12 @@ $(function() {
 
 		if(currencyflag===false)
 		{
-
-
 			alert("customer and currency dosen'n match");
-			// $("#curr").dialog({modal:true,
-			// 			title: 'Warning',
-			// 			width: 400,
-			// 			buttons : {
-			// 				Ok: function() {
-			// 					$(this).dialog("close"); //closing on Ok click
-			// 				}
-			// 			}
-
-			// 		});
-			// e.preventDefault();
+			return false;
+			
 		}
-		e.preventDefault();
-	}
-
-	function addstyle(id,value){
-		if ( $(id).val() ===value ) {
-			$(id).addClass("required");
-			valflag = true;
-		}
-		else 
-		{
-			$(id).removeClass("required");
-		}
-	}
-
-	function test()
-	{
-		console.log("page 2");
+		else
+			return true;
 	}
 
 });
