@@ -9,14 +9,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-    <script src="addproject.js"></script>
+    <script src="view.js"></script>
     <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
 	<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	
 </head>
-<body onload="test()">
+<body onload="getdata()">
 	<div class="rows">
+		<h3> PROJECT LIST </h3><br>
 		<div class="col-md-1"></div>
 		<div class="col-md-10" >	
             <div class="form-div row">
@@ -24,21 +25,23 @@
 						<thead>
 							<tr>
 								<th>Project Name</th>
-								<th>Project code</th>
-								<th>currency</th>
-								<th>customer</th>
-                                <th>type</th>
-                                <th>manager</th>
-                                <th>status</th>
-                                <th>start date</th>
-                                <th>end date</th>
+								<th>Project Code</th>
+								<th>Currency</th>
+								<th>Customer</th>
+                                <th>Type</th>
+                                <th>Manager</th>
+                                <th>Status</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
                                 
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="tablebody">
 							
 						</tbody>
 					</table>
+
+					<button class="btn btn-primaty btn-small" id="back" >back to home</button>
             </div>
 		</div>
         <div class="col-md-1"></div>

@@ -38,8 +38,8 @@
 						</select> <br>
 						<div class="row">
 							<div class="col-md-3"></div>
-							<div class="col-md-9"> 
-								Type &nbsp&nbsp&nbsp <input type="radio" name="type" class=".radio-inline" value="Fixed ree" id="ctype">&nbspFixed fee 
+							<div class="col-md-9" id="radio-div"> 
+								Type &nbsp&nbsp&nbsp <input type="radio" name="type" class=".radio-inline" value="Fixed fee" id="ctype" required>&nbspFixed fee 
 									&nbsp&nbsp&nbsp <input type="radio" name="type" class=".radio-inline" id="ctype" value="T and M">&nbspT and M
 							</div>
 						</div>	
@@ -60,14 +60,14 @@
 							<option value="On Hold">On Hold</option>
 							<option value="Closed">Closed</option>
 						</select> <br>
-                  Project Start Date<input type="text" class="form-control date" id="startdate" placeholder="Select Date " required> <br>
-                  Project Closure Date<input type="text" class="form-control date" id="enddate" placeholder="Select Date " required> <br>
+                  Project Start Date<input type="text" class="form-control date" id="startdate" placeholder="Select Date " readonly='true' required> <br>
+                  Project Closure Date<input type="text" class="form-control date" id="enddate" placeholder="Select Date " readonly='true' required> <br>
 
 					<div class="row">
 					<div class="col-md-6">																				
 						<button type="submit" id="add" class="form-control btn-primary">Submit</button>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6" id="btn-alt">
 						<button type="reset" class="form-control btn-primary" id="clear">Clear</button>
 					</div>
                <br><br><br>
@@ -81,17 +81,8 @@
 			</form>
 		</div>
 			
-			<div id="success"  style="display: none;"> 
-				<p> Successfully Added</p>
-				
-			</div>
-
-			<div id="curr"  style="display: none;"> 
-				<p>check currency</p>
-				
-			</div>
 			<div id="warning"  style="display: none;"> 
-				<p>All fields are mandatory</p>
+				<p>All fields except project closure date are mandatory</p>
 				
 			</div>
 
